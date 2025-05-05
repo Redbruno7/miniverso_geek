@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- Cabeçalho -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniverso Geek</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/pokebola_fav.png">
+</head>
+
+<!-- Corpo da página -->
+<body id="topo">
+
+<!-- Título e Subtítulo -->
+    <header class="bg-primary text-white p-4 text-center">
+        <h1>Miniverso Geek</h1>
+        <p>Crie um Mini Mundo Geek em sua casa com a gente!</p>
+    </header>
+
+    <!-- Navegador de páginas -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Início</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Primeira seção - Demonstração geral dos produtos -->
+    <main class="container mt-4">
+        <section id="servicos" class="mb-5 text-center">
+            <h2 class="text-primary mb-4">Nossos Produtos</h2>
+            <div class="position-relative d-inline-block" style="max-width: 600px;">
+
+                <!-- Imagem principal -->
+                <img id="imagemServico" src="images/lucarios_3d.jpeg" alt="Bonecos Origami 3D" class="img-fluid rounded" style="width: 100%; max-height: 350px; object-fit: cover;">
+        
+                <!-- Botão anterior (esquerda) -->
+                <button onclick="voltarServico()" class="btn-seta seta-esquerda">
+                    &#10094; <!-- seta “<” -->
+                </button>
+
+                <!-- Botão próximo (direita) -->
+                <button onclick="proximoServico()" class="btn-seta seta-direita">
+
+                    <!-- seta “>” -->
+                     &#10095;
+                </button>
+            </div>
+        
+            <!-- Título e descrição incial -->
+            <div class="mt-3 p-3 bg-light shadow rounded" style="max-width: 600px; margin: auto;">
+                <h4 id="tituloServico" class="text-primary mb-2">Origami 3D</h4>
+                <p id="descricaoServico">Bonecos de Origami 3D de diferentes tamanhos personalizáveis, feitos sob encomenda.</p>
+            </div>
+        </section>          
+
+        <!-- Segunda seção - Localização e Formulário de contato -->
+        <section id="contato" class="mb-5">
+            <div class="container my-5">
+                <div class="row">
+
+                    <!-- Mapa -->
+                    <div class="col-md-6">
+                        <h2>Estamos aqui:</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118602.30443058674!2d-43.4649230055523!3d-21.729038421587468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989c43e1f85da1%3A0x6236b026b3a0a468!2sJuiz%20de%20Fora%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1745590261908!5m2!1spt-BR!2sbr"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+              
+                    <!-- Formulário de contato -->
+                    <div class="col-md-6">
+                        <h2>Entre em Contato</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" placeholder="Seu e-mail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="mensagem" rows="4" placeholder="Sua mensagem"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>              
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+
+        <!-- Contato -->
+        <div>
+            <h5>Siga-nos:</h5>
+            <a href="https://www.instagram.com/origami.3d_jf/" target="_blank">
+                <img src="images/instagram.png" alt="Instagram" width="32">
+            </a>
+        </div>
+        <br>
+        <p>&copy; 2025 Miniverso Geek. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Voltar ao topo -->
+    <a href="#topo" id="btnTopo">
+        <img src="images/back_top.png" alt="Voltar ao topo" width="40">
+    </a>
+
+    <!-- Script para função voltar ao topo / alternar entre imagens -->
+    <script>
+        const btnTopo = document.getElementById("btnTopo");
+    
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                btnTopo.style.display = "block";
+            } else {
+                btnTopo.style.display = "none";
+            }
+        });
+
+        const servicos = [
+            {
+                imagem: "images/lucarios_3d.jpeg",
+                titulo: "Origami 3D",
+                descricao: "Bonecos de Origami 3D de diferentes tamanhos personalizáveis, feitos sob encomenda."
+            },
+            
+            {
+                imagem: "images/chaveiros_mult.png",
+                titulo: "Chaveiros",
+                descricao: "Chaveiros artesanais colecionáveis feitos de biscuit."
+            },
+            {
+                imagem: "images/Lego_mult.jpeg",
+                titulo: "Mini Legos",
+                descricao: "Bonecos Lego em miniaturas para você se divertir com muita fofura."
+            }
+        ];
+
+        let indiceAtual = 0;
+
+        function atualizarServico() {
+            document.getElementById("imagemServico").src = servicos[indiceAtual].imagem;
+            document.getElementById("imagemServico").alt = servicos[indiceAtual].titulo;
+            document.getElementById("tituloServico").textContent = servicos[indiceAtual].titulo;
+            document.getElementById("descricaoServico").textContent = servicos[indiceAtual].descricao;
+        }
+
+        function proximoServico() {
+            indiceAtual = (indiceAtual + 1) % servicos.length;
+            atualizarServico();
+        }
+
+        function voltarServico() {
+            indiceAtual = (indiceAtual - 1 + servicos.length) % servicos.length;
+            atualizarServico();
+        }
+    </script>
+</body>
+</html>
